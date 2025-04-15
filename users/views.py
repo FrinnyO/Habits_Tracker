@@ -21,9 +21,8 @@ class UserCreateAPIView(generics.CreateAPIView):
         return super().get_permissions()
 
     def perform_create(self, serializer):
-        user = serializer.save()
+        user = serializer.save(is_active=True)
         user.set_password(user.password)
-        user.is_active = True
         user.save()
 
 
