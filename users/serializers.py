@@ -10,6 +10,17 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ["id", "email", "password", "tg_chat_id"]
 
+    password = serializers.CharField(write_only=True)
+
+    def create(self, validated_data):
+        user= User(
+            email = validated_data["email"],
+            avatar = validated_data.get["avatar", None],
+        )
+        user.set_password(validated_data["password"])
+        user.save()
+        return user
+
 
 class TgChatIdSerializer(serializers.ModelSerializer):
 
