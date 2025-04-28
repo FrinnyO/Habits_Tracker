@@ -1,0 +1,37 @@
+[run]
+source = '.'
+omit =
+    *celery.py*
+    *tests*
+    *apps.py
+    *manage.py
+    *__init__.py
+    *migrations*
+    *asgi*
+    *wsgi*
+    *admin.py
+    *urls.py
+    */settings/*
+    *createadmin.py*
+    *tasks.py*
+
+[report]
+omit =
+    *celery.py*
+    *tests*
+    *apps.py
+    *manage.py
+    *__init__.py
+    *migrations*
+    *asgi*
+    *wsgi*
+    *admin.py
+    *urls.py
+    */settings/*
+    *createadmin.py*
+    *tasks.py*
+
+
+fail_under = 80
+show_missing = True
+skip_covered = False
